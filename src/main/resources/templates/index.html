@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sample Java App</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 th:text="${welcome}">Welcome message</h1>
+    <p>Served by pod: <strong th:text="${pod}">pod-name</strong></p>
+
+    <div class="card">
+      <h2>About</h2>
+      <p>This is a minimal Spring Boot + Thymeleaf demo app for Kubernetes deployments.</p>
+      <ul>
+        <li>ConfigMap-driven welcome message</li>
+        <li>Secret injected as environment variable (not shown)</li>
+        <li>Liveness & readiness probes using /health and /actuator/health</li>
+      </ul>
+    </div>
+
+    <div class="endpoints">
+      <h3>Useful endpoints</h3>
+      <ul>
+        <li><a href="/health">/health</a> — simple OK</li>
+        <li><a href="/actuator/health">/actuator/health</a> — actuator health JSON</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
